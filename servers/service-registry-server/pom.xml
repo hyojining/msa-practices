@@ -28,7 +28,10 @@
 		</dependency>
 		
 		<!-- Spring Cloud Discovery: Nextflix Eureka Server -->
-		
+		<dependency>
+		    <groupId>org.springframework.cloud</groupId>
+		    <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+		</dependency>		
 
 		<!-- Spring Boot Test Integration -->
 		<dependency>
