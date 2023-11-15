@@ -2,18 +2,18 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
+
+	<!-- 부모 스타터 -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.17</version>
-		<relativePath/>
+		<version>2.7.16</version>
+		<relativePath />
 	</parent>
-		
-	<groupId>com.poscodx.msa</groupId>
-	<artifactId>service-emaillist</artifactId>
+
+	<groupId>com.poscodx</groupId>
+	<artifactId>emaillist08</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	
 	<packaging>jar</packaging>
 	
 	<properties>
@@ -22,14 +22,14 @@
 		<spring-cloud.version>2021.0.8</spring-cloud.version>
 		<java.version>17</java.version>
 	</properties>
-	
+
 	<dependencies>
 		<!-- Spring Cloud Discovery: Netflix Eureka Client -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
-				
+		
 		<!-- Spring Boot Dev Tools: Live Reload -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -41,24 +41,17 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		
-		<!-- MyBatis Starter -->
+
+		<!-- Thymeleaf Starter -->
 		<dependency>
-			<groupId>org.mybatis.spring.boot</groupId>
-			<artifactId>mybatis-spring-boot-starter</artifactId>
-			<version>2.2.0</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
-				
+
 		<!-- lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-		</dependency>
-		
-		<!-- mariadb jdbc driver -->		
-		<dependency>
-		    <groupId>org.mariadb.jdbc</groupId>
-		    <artifactId>mariadb-java-client</artifactId>
 		</dependency>
 
 		<!-- Spring Boot Test Integration -->
@@ -80,12 +73,10 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-		
 	
 	<build>
-		<finalName>service-emaillist</finalName>
+		<finalName>emaillist08</finalName>
 		<plugins>
-			
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -97,9 +88,31 @@
 						</exclude>
 						<exclude>
 							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-devtools</artifactId>		
+							<artifactId>spring-boot-devtools</artifactId>
 						</exclude>
 					</excludes>
+				</configuration>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>3.0.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<executable>npm</executable>
+					<workingDirectory>../frontend</workingDirectory>
+					<arguments>
+						<argument>run</argument>
+						<argument>build:fe</argument>
+					</arguments>
+					<environmentVaiables></environmentVaiables>
 				</configuration>
 			</plugin>
 			
@@ -120,12 +133,10 @@
 									<directory>src/main/resources/script</directory>
 								</resource>
 							</resources>
-						</configuration>						
+						</configuration>
 					</execution>
 				</executions>
-			</plugin>			
-						
+			</plugin>
 		</plugins>
-	</build>	
-	
+	</build>
 </project>
