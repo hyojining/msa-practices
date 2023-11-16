@@ -59,7 +59,7 @@ logging:
                      
 eureka:
    instance:
-      hostname: 192.168.0.176
+      hostname: 192.168.0.11
    server:
       enableSelfPreservation: false
       waitTimeInMsWhenSyncEmpty: 5        
