@@ -47,7 +47,7 @@ spring:
                      
    datasource:
       driver-class-name: org.mariadb.jdbc.Driver
-      url: jdbc:mariadb://192.168.0.24:3307/webdb?charset=utf8
+      url: jdbc:mariadb://192.168.0.176:3307/webdb?charset=utf8
       username: webdb
       password: webdb
       hikari:
@@ -73,7 +73,7 @@ spring:
 
    datasource:
       driver-class-name: org.mariadb.jdbc.Driver
-      url: jdbc:mariadb://192.168.0.24:3307/webdb?charset=utf8
+      url: jdbc:mariadb://192.168.0.176:3307/webdb?charset=utf8
       username: webdb
       password: webdb
       hikari:

@@ -47,7 +47,7 @@ spring:
          enabled: true
    datasource:
       driver-class-name: org.mariadb.jdbc.Driver
-      url: jdbc:mariadb://192.168.0.24:3307/webdb?characterEncoding=utf8
+      url: jdbc:mariadb://192.168.0.176:3307/webdb?characterEncoding=utf8
       username: webdb
       password: webdb   
 server:
@@ -76,7 +76,7 @@ spring:
          on-profile: production
    datasource:
       driver-class-name: org.mariadb.jdbc.Driver
-      url: jdbc:mariadb://192.168.0.24:3307/webdb?characterEncoding=utf8
+      url: jdbc:mariadb://192.168.0.176:3307/webdb?characterEncoding=utf8
       username: webdb
       password: webdb   
 server:
