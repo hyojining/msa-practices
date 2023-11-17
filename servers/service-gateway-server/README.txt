@@ -10,7 +10,10 @@ Spring Cloud Gateway
 	<artifactId>spring-cloud-starter-gateway</artifactId>
 </dependency>
 
-
+<dependency>
+	<groupId>org.springframework.cloud</groupId>
+	<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+</dependency>
 
 
 ===
@@ -54,13 +57,11 @@ spring:
                '[/**]':
                   allowedOrigins: '*'
                   allowedHeaders: '*'
-                  allow-credentials: true
                   allowedMethods:
                   - GET
                   - POST
                   - PUT
-                  - DELETE
-                  - OPTIONS                         
+                  - DELETE                    
          discovery.locator:
             enabled: true
             lowerCaseServiceId: true 
@@ -91,12 +92,12 @@ spring:
 
    - 외부 리소스를 못 가져오는 단점
    - XSS 등과 같은 보안 취약점을 사전에 방지할 수 있다.
+   - 
 
-4. CORS(Cross Orign Resource Sharing) Error
 	<p>
 	   Access to fetch at 'http://localhost:8888/api' from origin 'http://localhost:9999' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
 	</p>
-
+4. CORS(Cross Orign Resource Sharing) Error
 5. 해결방법 1: simple request
 
 
@@ -131,10 +132,6 @@ JS                 browser                     server
 
                             --------------->
                             GET /api
-
-                            <---------------
-                            200 OK
-                            Access-Control-Allow-Origin:*
  
    <-------------
       response 
