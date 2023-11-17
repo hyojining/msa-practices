@@ -14,7 +14,7 @@ export default function Header() {
                     e.preventDefault();
                     console.log('로그아웃 구현');
                 }}>로그아웃</a>
-                <strong>킥스카님 안녕하세요 ^^;</strong>
+                <strong>님 안녕하세요 ^^;</strong>
             </nav>
         </header>
     );

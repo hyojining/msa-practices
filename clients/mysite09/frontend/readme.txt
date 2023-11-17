@@ -2,7 +2,7 @@ mysite09: frontend
 
 1.  설치
     1)  개발툴
-        $ npm i -D webpack webpack-cli webpack-dev-server css-loader style-loader sass-loader node-sass babel-loader @babel/core @babel/preset-env @babel/preset-react @babel/plugin-transform-runtime @babel/plugin-syntax-throw-expressions case-sensitive-paths-webpack-plugin concurrently
+        $ npm i -D webpack webpack-cli webpack-dev-server css-loader style-loader sass-loader node-sass babel-loader @babel/core @babel/preset-env @babel/preset-react @babel/plugin-transform-runtime @babel/plugin-syntax-throw-expressions case-sensitive-paths-webpack-plugin concurrently cross-env
 
     2)  라이브러리
         $ npm i react react-dom prop-types react-addons-update react-modal styled-component react-router react-router-dom
